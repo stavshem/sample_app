@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleApp</title>
+  <title>My Rails App | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header class="navbar navbar-fixed-top">
-		<div class="navbar-inner"/.
-			<%= link_to "sample app", '#', id: "logo" %>
-				<nav>
-					<ul class="nav pull-right">
-						<li><%= link_to "Home", '#' %></li>
-						<li><%= link_to "Help", '#' %></li>
-					</ul>
-				</nav>
-		</div>
-	</header>
-	<%= yield %>
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner"/.
+      <%= link_to "sample app", '#', id: "logo" %>
+        <nav>
+          <ul class="nav pull-right">
+            <li><%= link_to "Home", '#' %></li>
+            <li><%= link_to "Help", '#' %></li>
+         </ul>
+       </nav>
+     </div>
+  </header>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  <%= yield %>
+  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>
