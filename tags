@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddIndexToUsersEmail	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430131137_add_index_to_users_email.rb	/^class AddIndexToUsersEmail < ActiveRecord::Migration$/;"	c
+AddPasswordDigestToUsers	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430135718_add_password_digest_to_users.rb	/^class AddPasswordDigestToUsers < ActiveRecord::Migration$/;"	c
+Application	/Users/stav/rails_projects/sample_app/sample_app/config/application.rb	/^  class Application < Rails::Application$/;"	c	class:SampleApp
+ApplicationController	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateUsers	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430091914_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+SampleApp	/Users/stav/rails_projects/sample_app/sample_app/config/application.rb	/^module SampleApp$/;"	m
+StaticPagesController	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
+StaticPagesHelper	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
+User	/Users/stav/rails_projects/sample_app/sample_app/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UsersController	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+about	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^  def about$/;"	f	class:StaticPagesController
+about	/Users/stav/rails_projects/sample_app/sample_app/public/index.html	/^      function about() {$/;"	f
+change	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430091914_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430131137_add_index_to_users_email.rb	/^  def change$/;"	f	class:AddIndexToUsersEmail
+change	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430135718_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
+help	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
+home	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+new	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
+show	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
