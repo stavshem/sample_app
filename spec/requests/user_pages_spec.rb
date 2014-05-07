@@ -27,8 +27,7 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_selector('title', text: "error")}
-        #it { should have_content('error') }
+        it { should have_content('error') }
       end
     end
 

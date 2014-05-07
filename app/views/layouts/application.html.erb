@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Rails App | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>My Rails App | <%= yield(:title) %></title>
+<%= stylesheet_link_tag    "application", media: "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="navbar navbar-fixed-top">
-    <div class="navbar-inner"/.
-      <%= link_to "sample app", '#', id: "logo" %>
-        <nav>
-          <ul class="nav pull-right">
-            <li><%= link_to "Home", '#' %></li>
-            <li><%= link_to "Help", '#' %></li>
-         </ul>
-       </nav>
-     </div>
-  </header>
-    <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner"/.
+    <%= link_to "sample app", '#', id: "logo" %>
+    <nav>
+      <ul class="nav pull-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+        <% if signed_in? %>
+          <li><%= link_to "Users", '#' %></li>
+        <li id="fat-menu" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Account <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Settings", '#' %></li>
+          <li class="divider"></li>
+          <li>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+          </li>
+        </ul>
+        </li>
+      <% else %>
+          <li><%= link_to "Sign in", signin_path %></li>
       <% end %>
-      <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
-    </div>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
   <%= yield %>
   <%= debug(params) if Rails.env.development? %>
+</div>
+<%= yield %>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
