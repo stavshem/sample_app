@@ -11,6 +11,7 @@ SampleApp::Application.routes.draw do
 	resources :relationships, only: [:create, :destroy]
 
 	root to: 'static_pages#home'
+
 	match '/home', to: "static_pages#home"
 	match '/about', to: "static_pages#about"
 	match '/help', to: "static_pages#help"

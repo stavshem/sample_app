@@ -15,7 +15,6 @@ group :development, :test do
   gem 'guard-spork', '1.2.0'
   gem 'childprocess', '0.3.6'
   gem 'spork', '0.9.2'
-  gem 'byebug'
 end
 
 # Gems used only for assets and not required
@@ -34,8 +33,4 @@ group :test do
   # gem 'launchy', '2.1.0'
   # gem 'rb-fsevent', '0.9.1', :require => false
   # gem 'growl', '1.0.3'
-end
-
-group :production do
-  gem 'pg', '0.12.2'
 end
