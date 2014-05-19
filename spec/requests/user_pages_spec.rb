@@ -13,6 +13,7 @@ describe "User pages" do
     it { should have_selector('title', text: user.name) }
 
   end
+
   describe "following/followers" do
     let(:user) { FactoryGirl.create(:user) }
     let(:other_user) { FactoryGirl.create(:user) }
@@ -93,5 +94,51 @@ describe "User pages" do
     #it { should have_content('error') }
     #end
     #end
+
   end
+
+  describe "RSS feed" do
+
+    before do
+      @user = FactoryGirl.create(:user)
+      sign_in @user
+      visit user_url(@user, :format => 'rss')
+    end
+
+    context "contains RSS header" do
+      it { should have_selector('title', text: 'RSS') }
+    end
+
+    context "user doesn't have microposts" do
+      it { should_not have_selector('item') }
+    end
+
+    context "user has a micropost" do
+      before do 
+        FactoryGirl.create(:micropost, user: @user)
+        visit user_url(@user, :format => 'rss')
+      end
+      it { should have_selector('item') }
+    end
+
+    context "user has multiple microposts" do
+      before do 
+        FactoryGirl.create(:micropost, user: @user)
+        FactoryGirl.create(:micropost, user: @user)
+        FactoryGirl.create(:micropost, user: @user)
+        visit user_url(@user, :format => 'rss')
+      end
+      it { expect(@user.microposts.count).to be > 1 }
+      it { expect(page).to have_selector('item', count: @user.microposts.count) }
+
+      it "should have the contnet of each of the user's posts" do
+        @user.microposts.each do |micropost|
+          expect(page).to have_selector("description", text: micropost.content)
+        end # foreach
+      end # it
+    end #context
+
+
+  end
+
 end
