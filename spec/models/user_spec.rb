@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe User do
-  #before { @user = User.new(name: "hey", email: "user@gmail.com")}
   before do
     @user = User.new(name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
@@ -31,7 +30,7 @@ describe User do
   it { should be_valid }
   it { should_not be_admin }
 
-  
+
   describe "accessible attributes" do
     it "should not allow access to admin" do
       expect do
@@ -49,7 +48,7 @@ describe User do
     it { should be_admin }
   end
 
-    describe "when name is not present" do
+  describe "when name is not present" do
     before { @user.name = " " }
     it { should_not be_valid }
   end
@@ -74,7 +73,7 @@ describe User do
     end
   end
 
-  
+
   describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
     it { should_not be_valid }
@@ -119,6 +118,41 @@ describe User do
       its(:feed) { should include(newer_micropost) }
       its(:feed) { should include(older_micropost) }
       its(:feed) { should_not include(unfollowed_post) }
+    end
+  end
+
+  describe "feed" do
+
+    context "a reply micropost" do
+
+      before do
+        @reply_to = FactoryGirl.create(:user)
+        @reply_to_name = ReplyExtractor.raw_name_to_reply_name(@reply_to.name)
+        @reply_micropost = FactoryGirl.create(:micropost,
+                                              content: "@%s some reply micropost" % @reply_to_name)
+        @user.save()
+      end
+
+      context "to an unfollowed user" do
+        # inside "feed - a reply micropost - to an unfollowed user"
+        context "if not the sender"
+        its(:feed) { should_not include(@reply_micropost) }
+
+        # inside "feed - a reply micropost - to an unfollowed user"
+        context "if is the sender" do 
+          before { @reply_micropost.update_attribute(:user, @user) }
+          its(:feed) {should include(@reply_micropost)}
+        end
+      end
+
+      # inside "feed - a reply micropost"
+      context "to a followed user" do 
+        before do
+          @reply_micropost.update_attribute(:user, FactoryGirl.create(:user))
+          @user.follow!(@reply_to)
+        end
+        its(:feed) { should include(@reply_micropost) }
+      end
     end
   end
 end

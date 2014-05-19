@@ -4,50 +4,80 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-AddIndexToUsersEmail	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430131137_add_index_to_users_email.rb	/^class AddIndexToUsersEmail < ActiveRecord::Migration$/;"	c
-AddPasswordDigestToUsers	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430135718_add_password_digest_to_users.rb	/^class AddPasswordDigestToUsers < ActiveRecord::Migration$/;"	c
-AddRememberTokenToUsers	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140505091221_add_remember_token_to_users.rb	/^class AddRememberTokenToUsers < ActiveRecord::Migration$/;"	c
-Application	/Users/stav/rails_projects/sample_app/sample_app/config/application.rb	/^  class Application < Rails::Application$/;"	c	class:SampleApp
-ApplicationController	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
-ApplicationHelper	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
-CreateUsers	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430091914_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
-SampleApp	/Users/stav/rails_projects/sample_app/sample_app/config/application.rb	/^module SampleApp$/;"	m
-SessionsController	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
-SessionsHelper	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
-StaticPagesController	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
-StaticPagesHelper	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
-User	/Users/stav/rails_projects/sample_app/sample_app/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
-UsersController	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
-UsersHelper	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
-about	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^  def about$/;"	f	class:StaticPagesController
-about	/Users/stav/rails_projects/sample_app/sample_app/public/index.html	/^      function about() {$/;"	f
-change	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430091914_create_users.rb	/^  def change$/;"	f	class:CreateUsers
-change	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430131137_add_index_to_users_email.rb	/^  def change$/;"	f	class:AddIndexToUsersEmail
-change	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140430135718_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
-change	/Users/stav/rails_projects/sample_app/sample_app/db/migrate/20140505091221_add_remember_token_to_users.rb	/^  def change$/;"	f	class:AddRememberTokenToUsers
-correct_user	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def correct_user$/;"	f	class:UsersController
-create	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/sessions_controller.rb	/^	def create$/;"	f	class:SessionsController
-create	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def create$/;"	f	class:UsersController
-create_remember_token	/Users/stav/rails_projects/sample_app/sample_app/app/models/user.rb	/^	def create_remember_token$/;"	f	class:User
-current_user	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^	def current_user$/;"	f	class:SessionsHelper
-current_user=	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^	def current_user=(user)$/;"	f	class:SessionsHelper
-current_user?	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def current_user?(user)$/;"	f	class:UsersController
-destroy	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/sessions_controller.rb	/^	def destroy$/;"	f	class:SessionsController
-digest	/Users/stav/rails_projects/sample_app/sample_app/app/models/user.rb	/^	def User.digest(token)$/;"	F	class:User
-edit	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def edit$/;"	f	class:UsersController
-gravatar_for	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/users_helper.rb	/^  def gravatar_for(user, options = { size: 50 })$/;"	f	class:UsersHelper
-help	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
-home	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
-index	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def index$/;"	f	class:UsersController
-new	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/sessions_controller.rb	/^	def new$/;"	f	class:SessionsController
-new	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def new$/;"	f	class:UsersController
-new_remember_token	/Users/stav/rails_projects/sample_app/sample_app/app/models/user.rb	/^	def User.new_remember_token$/;"	F	class:User
-redirect_back_or	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^	def redirect_back_or(default)$/;"	f	class:SessionsHelper
-show	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def show$/;"	f	class:UsersController
-sign_in	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^	def sign_in(user)$/;"	f	class:SessionsHelper
-sign_in	/Users/stav/rails_projects/sample_app/sample_app/spec/support/utilities.rb	/^def sign_in(user, options={})$/;"	f
-sign_out	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^	def sign_out$/;"	f	class:SessionsHelper
-signed_in?	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^	def signed_in?$/;"	f	class:SessionsHelper
-signed_in_user	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def signed_in_user$/;"	f	class:UsersController
-store_location	/Users/stav/rails_projects/sample_app/sample_app/app/helpers/sessions_helper.rb	/^	def store_location$/;"	f	class:SessionsHelper
-update	/Users/stav/rails_projects/sample_app/sample_app/app/controllers/users_controller.rb	/^	def update$/;"	f	class:UsersController
+AddAdminToUsers	/Users/Stav/sample_app/db/migrate/20140508121157_add_admin_to_users.rb	/^class AddAdminToUsers < ActiveRecord::Migration$/;"	c
+AddInReplyToToMicroposts	/Users/Stav/sample_app/db/migrate/20140518090143_add_in_reply_to_to_microposts.rb	/^class AddInReplyToToMicroposts < ActiveRecord::Migration$/;"	c
+AddIndexToUsersEmail	/Users/Stav/sample_app/db/migrate/20140430131137_add_index_to_users_email.rb	/^class AddIndexToUsersEmail < ActiveRecord::Migration$/;"	c
+AddPasswordDigestToUsers	/Users/Stav/sample_app/db/migrate/20140430135718_add_password_digest_to_users.rb	/^class AddPasswordDigestToUsers < ActiveRecord::Migration$/;"	c
+AddRememberTokenToUsers	/Users/Stav/sample_app/db/migrate/20140505091221_add_remember_token_to_users.rb	/^class AddRememberTokenToUsers < ActiveRecord::Migration$/;"	c
+Application	/Users/Stav/sample_app/config/application.rb	/^  class Application < Rails::Application$/;"	c	class:SampleApp
+ApplicationController	/Users/Stav/sample_app/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	/Users/Stav/sample_app/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateMicroposts	/Users/Stav/sample_app/db/migrate/20140508135718_create_microposts.rb	/^class CreateMicroposts < ActiveRecord::Migration$/;"	c
+CreateRelationships	/Users/Stav/sample_app/db/migrate/20140513133551_create_relationships.rb	/^class CreateRelationships < ActiveRecord::Migration$/;"	c
+CreateUsers	/Users/Stav/sample_app/db/migrate/20140430091914_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+Micropost	/Users/Stav/sample_app/app/models/micropost.rb	/^class Micropost < ActiveRecord::Base$/;"	c
+MicropostsController	/Users/Stav/sample_app/app/controllers/microposts_controller.rb	/^class MicropostsController < ApplicationController$/;"	c
+Relationship	/Users/Stav/sample_app/app/models/relationship.rb	/^class Relationship < ActiveRecord::Base$/;"	c
+RelationshipsController	/Users/Stav/sample_app/app/controllers/relationships_controller.rb	/^class RelationshipsController < ApplicationController$/;"	c
+SampleApp	/Users/Stav/sample_app/config/application.rb	/^module SampleApp$/;"	m
+SessionsController	/Users/Stav/sample_app/app/controllers/sessions_controller.rb	/^class SessionsController < ApplicationController$/;"	c
+SessionsHelper	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^module SessionsHelper$/;"	m
+StaticPagesController	/Users/Stav/sample_app/app/controllers/static_pages_controller.rb	/^class StaticPagesController < ApplicationController$/;"	c
+StaticPagesHelper	/Users/Stav/sample_app/app/helpers/static_pages_helper.rb	/^module StaticPagesHelper$/;"	m
+User	/Users/Stav/sample_app/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UsersController	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersHelper	/Users/Stav/sample_app/app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+about	/Users/Stav/sample_app/app/controllers/static_pages_controller.rb	/^  def about$/;"	f	class:StaticPagesController
+admin_user	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def admin_user$/;"	f	class:UsersController
+change	/Users/Stav/sample_app/db/migrate/20140430091914_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	/Users/Stav/sample_app/db/migrate/20140430131137_add_index_to_users_email.rb	/^  def change$/;"	f	class:AddIndexToUsersEmail
+change	/Users/Stav/sample_app/db/migrate/20140430135718_add_password_digest_to_users.rb	/^  def change$/;"	f	class:AddPasswordDigestToUsers
+change	/Users/Stav/sample_app/db/migrate/20140505091221_add_remember_token_to_users.rb	/^  def change$/;"	f	class:AddRememberTokenToUsers
+change	/Users/Stav/sample_app/db/migrate/20140508121157_add_admin_to_users.rb	/^  def change$/;"	f	class:AddAdminToUsers
+change	/Users/Stav/sample_app/db/migrate/20140508135718_create_microposts.rb	/^  def change$/;"	f	class:CreateMicroposts
+change	/Users/Stav/sample_app/db/migrate/20140513133551_create_relationships.rb	/^  def change$/;"	f	class:CreateRelationships
+change	/Users/Stav/sample_app/db/migrate/20140518090143_add_in_reply_to_to_microposts.rb	/^  def change$/;"	f	class:AddInReplyToToMicroposts
+correct_user	/Users/Stav/sample_app/app/controllers/microposts_controller.rb	/^  def correct_user$/;"	f	class:MicropostsController
+correct_user	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def correct_user$/;"	f	class:UsersController
+create	/Users/Stav/sample_app/app/controllers/microposts_controller.rb	/^  def create$/;"	f	class:MicropostsController
+create	/Users/Stav/sample_app/app/controllers/relationships_controller.rb	/^   def create$/;"	f	class:RelationshipsController
+create	/Users/Stav/sample_app/app/controllers/sessions_controller.rb	/^	def create$/;"	f	class:SessionsController
+create	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def create$/;"	f	class:UsersController
+create_remember_token	/Users/Stav/sample_app/app/models/user.rb	/^	def create_remember_token$/;"	f	class:User
+current_user	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def current_user$/;"	f	class:SessionsHelper
+current_user=	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def current_user=(user)$/;"	f	class:SessionsHelper
+current_user?	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def current_user?(user)$/;"	f	class:UsersController
+current_user?	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def current_user?(user)$/;"	f	class:SessionsHelper
+destroy	/Users/Stav/sample_app/app/controllers/microposts_controller.rb	/^  def destroy$/;"	f	class:MicropostsController
+destroy	/Users/Stav/sample_app/app/controllers/relationships_controller.rb	/^  def destroy$/;"	f	class:RelationshipsController
+destroy	/Users/Stav/sample_app/app/controllers/sessions_controller.rb	/^	def destroy$/;"	f	class:SessionsController
+destroy	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def destroy$/;"	f	class:UsersController
+digest	/Users/Stav/sample_app/app/models/user.rb	/^	def User.digest(token)$/;"	F	class:User
+edit	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def edit$/;"	f	class:UsersController
+feed	/Users/Stav/sample_app/app/models/user.rb	/^	def feed$/;"	f	class:User
+follow!	/Users/Stav/sample_app/app/models/user.rb	/^  def follow!(other_user)$/;"	f	class:User
+followers	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^  def followers$/;"	f	class:UsersController
+following	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^  def following$/;"	f	class:UsersController
+following?	/Users/Stav/sample_app/app/models/user.rb	/^  def following?(other_user)$/;"	f	class:User
+from_users_followed_by	/Users/Stav/sample_app/app/models/micropost.rb	/^  def self.from_users_followed_by(user)$/;"	F	class:Micropost
+full_title	/Users/Stav/sample_app/spec/support/utilities.rb	/^def full_title(page_title)$/;"	f
+gravatar_for	/Users/Stav/sample_app/app/helpers/users_helper.rb	/^  def gravatar_for(user, options = { size: 50 })$/;"	f	class:UsersHelper
+help	/Users/Stav/sample_app/app/controllers/static_pages_controller.rb	/^  def help$/;"	f	class:StaticPagesController
+home	/Users/Stav/sample_app/app/controllers/static_pages_controller.rb	/^  def home$/;"	f	class:StaticPagesController
+index	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def index$/;"	f	class:UsersController
+make_microposts	/Users/Stav/sample_app/lib/tasks/sample_data.rake	/^def make_microposts$/;"	f
+make_relationships	/Users/Stav/sample_app/lib/tasks/sample_data.rake	/^def make_relationships$/;"	f
+make_users	/Users/Stav/sample_app/lib/tasks/sample_data.rake	/^def make_users$/;"	f
+new	/Users/Stav/sample_app/app/controllers/sessions_controller.rb	/^	def new$/;"	f	class:SessionsController
+new	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def new$/;"	f	class:UsersController
+new_remember_token	/Users/Stav/sample_app/app/models/user.rb	/^	def User.new_remember_token$/;"	F	class:User
+redirect_back_or	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def redirect_back_or(default)$/;"	f	class:SessionsHelper
+show	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def show$/;"	f	class:UsersController
+sign_in	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def sign_in(user)$/;"	f	class:SessionsHelper
+sign_in	/Users/Stav/sample_app/spec/support/utilities.rb	/^def sign_in(user)$/;"	f
+sign_out	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def sign_out$/;"	f	class:SessionsHelper
+signed_in?	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def signed_in?$/;"	f	class:SessionsHelper
+signed_in_user	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def signed_in_user$/;"	f	class:SessionsHelper
+store_location	/Users/Stav/sample_app/app/helpers/sessions_helper.rb	/^	def store_location$/;"	f	class:SessionsHelper
+unfollow!	/Users/Stav/sample_app/app/models/user.rb	/^  def unfollow!(other_user)$/;"	f	class:User
+update	/Users/Stav/sample_app/app/controllers/users_controller.rb	/^	def update$/;"	f	class:UsersController

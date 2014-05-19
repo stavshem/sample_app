@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Micropost do
 
   let(:user) { FactoryGirl.create(:user) }
+  #before { @micropost = user.microposts.first }
   before { @micropost = user.microposts.build(content: "Lorem ipsum") }
 
   subject { @micropost }
@@ -36,4 +37,25 @@ describe Micropost do
     before { @micropost.content = "a" * 141 }
     it { should_not be_valid }
   end
+
+  describe "replies" do
+    context "micropost without reply" do
+      before { @micropost.content = "a" * 141 }
+      its(:in_reply_to) { should be_nil }
+    end
+    context "micropost with reply" do
+      before { @micropost.content = "@bla hello" }
+      context "reply user exists" do
+          before do
+            @user_1 = FactoryGirl.create(:user, name: "Stav")
+            @user_2 = FactoryGirl.create(:user, name: "Erez")
+            @user_3 = FactoryGirl.create(:user, name: "Bla")
+            @micropost.save()
+          end
+          its(:in_reply_to) {should == @user_3.id}
+      end
+    end
+  end
+
+
 end
