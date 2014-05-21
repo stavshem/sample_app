@@ -18,7 +18,7 @@ describe "Static pages" do
 		end
 
 		it "should render the user's feed" do
-			user.feed.each do |item|
+      GenerateFeed.for_user(user).each do |item|
 				expect(page).to have_selector("li##{item.id}", text: item.content)
 			end
 		end

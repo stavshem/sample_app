@@ -5,6 +5,10 @@ class ReplyExtractor
   def initialize(content)
     @content = content
   end
+
+  def get_user
+    @content.match(/@((\w|-)+)/)[1]
+  end
  
   def reply_user_id
     reply_user_name = user_name

@@ -77,27 +77,10 @@ describe "User pages" do
       end
 
     end
-
-    #describe "edit" do
-    #let(:user) { FactoryGirl.create(:user) }
-    #before { visit edit_user_path(user) }
-
-    #describe "page" do
-    #it { should have_content("Update your profile") }
-    #it { should have_selector('title', text: 'Edit user') }
-    #it { should have_link('change', href: 'http://gravatar.com/emails') }
-    #end
-
-    #describe "with invalid information" do
-    #before { click_button "Save changes" }
-
-    #it { should have_content('error') }
-    #end
-    #end
-
   end
 
-  describe "RSS feed" do
+
+  describe "RSS feed for user microposts" do
 
     before do
       @user = FactoryGirl.create(:user)
@@ -105,8 +88,9 @@ describe "User pages" do
       visit user_url(@user, :format => 'rss')
     end
 
-    context "contains RSS header" do
+    context "header" do
       it { should have_selector('title', text: 'RSS') }
+      it { should have_selector('title', text: @user.name) }
     end
 
     context "user doesn't have microposts" do
@@ -126,19 +110,69 @@ describe "User pages" do
         FactoryGirl.create(:micropost, user: @user)
         FactoryGirl.create(:micropost, user: @user)
         FactoryGirl.create(:micropost, user: @user)
-        visit user_url(@user, :format => 'rss')
+        visit user_url(@user, format: 'rss')
       end
+
+      # assert corrent number of items
       it { expect(@user.microposts.count).to be > 1 }
       it { expect(page).to have_selector('item', count: @user.microposts.count) }
 
+      # assert items content
       it "should have the contnet of each of the user's posts" do
         @user.microposts.each do |micropost|
           expect(page).to have_selector("description", text: micropost.content)
         end # foreach
       end # it
+
+      # assert matches rss scheme
+      #its { content_type.should eq("application/rss+xml") }
+      # << complete this >> 
+      #
     end #context
 
+  end
 
+
+  describe "RSS feed for user status feed" do
+
+    context "user signed in" do
+      before do
+        @new_user = FactoryGirl.create(:user)
+        sign_in @new_user
+        visit home_path(format: 'rss')
+      end
+      it { should have_selector('title', text: 'RSS') }
+      it { should have_selector('title', text: @new_user.name) }
+
+      #context "feed is empty"
+        #before do
+          #GenerateFeed.for_user(@new_user).each do |micropost|
+            #micropost.destroy
+          #end # foreach
+          #visit root_path(format: 'rss')
+        #end
+        #it { should_not have_selector('item') }
+
+      context "feed is not empty"
+        before do
+          @followed_user = FactoryGirl.create(:user)
+          @micropost = FactoryGirl.create(:micropost, user: @followed_user)
+          @new_user.follow!(@followed_user)
+          visit root_path(format: 'rss')
+        end
+        #it { expect( GenerateFeed.for_user(@new_user).count).to be > 0 }
+        it { expect(page).to have_selector('item', count: GenerateFeed.for_user(@new_user).count) }
+    end
+
+    context "user not signed in" do
+      before do
+        @user = FactoryGirl.create(:user)
+        visit root_path(format: 'rss')
+      end
+      it { should have_content('Error') }
+      it { should_not have_content(text: @user.name) }
+      it { should_not have_selector('item') }
+    end
   end
 
 end

@@ -20,11 +20,6 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 	validates :password, length: { minimum: 6 }
 
-	def feed
-		#self.microposts
-    Micropost.from_users_followed_by(self)
-	end
-
 
   def following?(other_user)
     relationships.find_by_followed_id(other_user.id)

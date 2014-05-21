@@ -17,7 +17,6 @@ describe User do
   it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:microposts) }
-  it { should respond_to(:feed) }
   it { should respond_to(:relationships) }
   it { should respond_to(:followed_users) }
   it { should respond_to(:reverse_relationships) }
@@ -96,64 +95,5 @@ describe User do
   end
 
 
-  describe "micropost associations" do
-
-    before { @user.save }
-    let!(:older_micropost) do
-      FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
-    end
-    let!(:newer_micropost) do
-      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
-    end
-
-    it "should have the right microposts in the right order" do
-      expect(@user.microposts.to_a).to eq [newer_micropost, older_micropost]
-    end
-
-    describe "status" do
-      let(:unfollowed_post) do
-        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
-      end
-
-      its(:feed) { should include(newer_micropost) }
-      its(:feed) { should include(older_micropost) }
-      its(:feed) { should_not include(unfollowed_post) }
-    end
-  end
-
-  describe "feed" do
-
-    context "a reply micropost" do
-
-      before do
-        @reply_to = FactoryGirl.create(:user)
-        @reply_to_name = ReplyExtractor.raw_name_to_reply_name(@reply_to.name)
-        @reply_micropost = FactoryGirl.create(:micropost,
-                                              content: "@%s some reply micropost" % @reply_to_name)
-        @user.save()
-      end
-
-      context "to an unfollowed user" do
-        # inside "feed - a reply micropost - to an unfollowed user"
-        context "if not the sender"
-        its(:feed) { should_not include(@reply_micropost) }
-
-        # inside "feed - a reply micropost - to an unfollowed user"
-        context "if is the sender" do 
-          before { @reply_micropost.update_attribute(:user, @user) }
-          its(:feed) {should include(@reply_micropost)}
-        end
-      end
-
-      # inside "feed - a reply micropost"
-      context "to a followed user" do 
-        before do
-          @reply_micropost.update_attribute(:user, FactoryGirl.create(:user))
-          @user.follow!(@reply_to)
-        end
-        its(:feed) { should include(@reply_micropost) }
-      end
-    end
-  end
 end
 

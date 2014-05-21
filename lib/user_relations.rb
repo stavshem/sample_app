@@ -1,0 +1,3 @@
+class UsersRelation
+
+end

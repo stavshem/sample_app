@@ -17,7 +17,6 @@ xml.rss :version => "2.0" do
     for micropost in @user.microposts do
       xml.item do
         xml.title          micropost.content.split[0..3].join(' ') + "..." 
-        #xml.link          
         xml.description    micropost.content 
         xml.pubDate        micropost.created_at.to_s(:rfc822)
         xml.guid           micropost.id, isPermaLink: false

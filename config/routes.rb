@@ -10,9 +10,9 @@ SampleApp::Application.routes.draw do
 	resources :microposts,   only: [:create, :destroy]
 	resources :relationships, only: [:create, :destroy]
 
-	root to: 'static_pages#home'
+	root to: 'dynamic_pages#home'
 
-	match '/home', to: "static_pages#home"
+	match '/home', to: "dynamic_pages#home"
 	match '/about', to: "static_pages#about"
 	match '/help', to: "static_pages#help"
 
@@ -20,12 +20,6 @@ SampleApp::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-	#match '/signup',  to: 'users#new',            via: 'get'
-	#match '/signin',  to: 'sessions#new',         via: 'get'
-	#match '/signout',  to: 'sessions#destroy',    via: 'post'
-
-	#match '/signin',  to: 'sessions#new',         via: 'get'
-	#match '/signout', to: 'sessions#destroy',     via: 'delete'
 	# The priority is based upon order of creation:
 	# first created -> highest priority.
 
