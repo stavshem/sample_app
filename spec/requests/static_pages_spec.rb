@@ -18,11 +18,15 @@ describe "Static pages" do
 		end
 
 		it "should render the user's feed" do
-      GenerateFeed.for_user(user).each do |item|
+      		GenerateFeed.for_user(user).each do |item|
 				expect(page).to have_selector("li##{item.id}", text: item.content)
 			end
 		end
-	end
+
+		it "should render user's message box" do
+				expect(page).to have_selector("h1", text: "Message Box")
+			end
+		end
 
 	describe "Help page" do
 		it "should have 'Help'" do
@@ -37,5 +41,4 @@ describe "Static pages" do
 			page.should have_selector('h1', :text => 'About Us')
 		end
 	end
-
 end

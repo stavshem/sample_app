@@ -48,9 +48,10 @@ describe "Extractor" do
 
   describe "Message" do
     context "content is a private message" do
-      before {@content = "dstav-sh hello stav"}
+      before {@content = "dddstav-sh hello stav"}
       context "reply user exists" do
         before { @user = FactoryGirl.create(:user, name: "Stav Sh")}
+        its(:user_string) { should == "stav-sh"}
         its(:user_id) { should == @user.id}
         its(:content_type) { should eq :message }
       end

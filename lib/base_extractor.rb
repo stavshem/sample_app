@@ -4,7 +4,7 @@ class BaseExtractor
     @content = content
     @type_to_prefix = {
       :reply => /@((\w|-)+)/,
-      :message => /d((\w|-)+)/,
+      :message => /ddd((\w|-)+)/,
     }
   end
   

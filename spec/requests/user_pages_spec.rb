@@ -124,10 +124,6 @@ describe "User pages" do
         end # foreach
       end # it
 
-      # assert matches rss scheme
-      #its { content_type.should eq("application/rss+xml") }
-      # << complete this >> 
-      #
     end #context
 
   end
@@ -143,15 +139,6 @@ describe "User pages" do
       end
       it { should have_selector('title', text: 'RSS') }
       it { should have_selector('title', text: @new_user.name) }
-
-      #context "feed is empty"
-        #before do
-          #GenerateFeed.for_user(@new_user).each do |micropost|
-            #micropost.destroy
-          #end # foreach
-          #visit root_path(format: 'rss')
-        #end
-        #it { should_not have_selector('item') }
 
       context "feed is not empty"
         before do

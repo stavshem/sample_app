@@ -70,7 +70,7 @@ describe Micropost do
             @user_2 = FactoryGirl.create(:user, name: "Bla")
             @user_3 = FactoryGirl.create(:user, name: "Stav")
             @micropost = FactoryGirl.create(:micropost,
-              content: "dstav this is a private message")
+              content: "dddstav this is a private message")
           end
           its(:in_reply_to) { should ==  @user_3.id}
           it { should be_private }
