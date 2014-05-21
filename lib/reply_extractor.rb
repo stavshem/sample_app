@@ -6,9 +6,6 @@ class ReplyExtractor
     @content = content
   end
 
-  def get_user
-    @content.match(/@((\w|-)+)/)[1]
-  end
  
   def reply_user_id
     reply_user_name = user_name
@@ -29,6 +26,10 @@ class ReplyExtractor
     return raw_name.downcase.sub(" ", "-") 
   end
 
-
+  def user_prefix
+    raise "method not implemented"
+  end
   
 end
+
+
