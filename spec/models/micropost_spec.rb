@@ -53,6 +53,27 @@ describe Micropost do
             @micropost.save()
           end
           its(:in_reply_to) {should == @user_3.id}
+          it { should_not be_private }
+      end
+    end
+  end
+
+  describe "messaging" do
+    context "is not a private message" do
+      before { @micropost.content = "a" * 141 }
+      it { should_not be_private }
+    end
+    context "is a private message" do
+      context "repicient exists" do
+          before do
+            @user_1 = FactoryGirl.create(:user, name: "Erez")
+            @user_2 = FactoryGirl.create(:user, name: "Bla")
+            @user_3 = FactoryGirl.create(:user, name: "Stav")
+            @micropost = FactoryGirl.create(:micropost,
+              content: "dstav this is a private message")
+          end
+          its(:in_reply_to) { should ==  @user_3.id}
+          it { should be_private }
       end
     end
   end

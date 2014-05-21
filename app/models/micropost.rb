@@ -1,4 +1,4 @@
-require 'reply_extractor'
+require 'base_extractor'
 class Micropost < ActiveRecord::Base
   attr_accessible :content, :in_reply_to
   belongs_to :user
@@ -8,12 +8,20 @@ class Micropost < ActiveRecord::Base
 
   default_scope order: 'microposts.created_at DESC'
 
-  before_save :handle_replies
+  before_save :handle_irregular_micropost
 
   private
 
-  def handle_replies
-    extractor = ReplyExtractor.new(self.content)
-    self.in_reply_to = extractor.reply_user_id
+  def handle_irregular_micropost
+    extractor = BaseExtractor.new(self.content)
+    
+    case extractor.content_type
+    when :reply
+      self.in_reply_to = extractor.user_id
+    when :message
+      self.in_reply_to = extractor.user_id
+      self.private = true
+    end
   end
+
 end
