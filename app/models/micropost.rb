@@ -1,4 +1,4 @@
-require 'base_extractor'
+require 'content_extractor'
 class Micropost < ActiveRecord::Base
   attr_accessible :content, :in_reply_to
   belongs_to :user
@@ -13,7 +13,7 @@ class Micropost < ActiveRecord::Base
   private
 
   def handle_irregular_micropost
-    extractor = BaseExtractor.new(self.content)
+    extractor = ContentExtractor.new(self.content)
     
     case extractor.content_type
     when :reply

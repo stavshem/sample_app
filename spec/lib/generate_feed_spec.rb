@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'content_extractor'
 
 describe GenerateFeed do
 
@@ -11,7 +12,7 @@ describe GenerateFeed do
       before do
         @user = FactoryGirl.create(:user)
         @reply_to = FactoryGirl.create(:user)
-        @reply_to_name = BaseExtractor.db_name_to_formatted_name(@reply_to.name)
+        @reply_to_name = ContentExtractor.db_name_to_formatted_name(@reply_to.name)
         @reply_micropost = FactoryGirl.create(:micropost,
                                               content: "@#{@reply_to_name} some reply micropost")
       end
