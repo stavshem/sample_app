@@ -52,16 +52,15 @@ describe "ContentExtractor" do
       before { @content = "dddstav-sh hello stav" }
 
       context "reply user does not exist" do
-        its(:user_string) { should == "stav-sh"}
         its(:user_id) { should be_nil}
         its(:content_type) { should eq :message }
       end
       
       context "reply user exists" do
         before { @user = FactoryGirl.create(:user, name: "Stav Sh")}
-        its(:user_string) { should == "stav-sh"}
         its(:user_id) { should == @user.id}
         its(:content_type) { should eq :message }
+        its(:user_string) { should == "stav-sh"}
       end
     end
   end

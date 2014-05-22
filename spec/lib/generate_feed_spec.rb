@@ -37,8 +37,28 @@ describe GenerateFeed do
       end
     end
 
+    context "a private message" do
 
-    describe "micropost associations" do
+      before do
+        @user = FactoryGirl.create(:user)
+        @repicient = FactoryGirl.create(:user)
+        @repicient_name = ContentExtractor.db_name_to_formatted_name(@repicient.name)
+        @message = FactoryGirl.create(:micropost,
+                                       content: "ddd#{@repicient_name} a private message")
+      end
+
+      context "to an unfollowed user" do
+        it { should_not include(@message) }
+      end
+
+      context "to a followed user" do
+        before { @user.follow!(@repicient) }
+        it { should_not include(@message) }
+      end
+    end
+
+
+    describe "micropost order" do
 
       before { @user = FactoryGirl.create(:user) }
       let!(:older_micropost) do
